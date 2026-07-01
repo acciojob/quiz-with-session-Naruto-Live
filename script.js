@@ -55,7 +55,7 @@ function renderQuestions() {
       choiceElement.setAttribute("name", `question-${i}`);
       choiceElement.setAttribute("value", choice);
       if (userAnswers[i] === choice) {
-        choiceElement.setAttribute("checked", true);
+        choiceElement.setAttribute("checked", "true");
       }
       const choiceText = document.createTextNode(choice);
       questionElement.appendChild(choiceElement);
