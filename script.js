@@ -54,8 +54,12 @@ function renderQuestions() {
       choiceElement.setAttribute("type", "radio");
       choiceElement.setAttribute("name", `question-${i}`);
       choiceElement.setAttribute("value", choice);
+	  choiceElement.addEventListener("change", function () {
+		    userAnswers[i] = choice;
+		    sessionStorage.setItem("progress", JSON.stringify(userAnswers));
+	  });
       if (userAnswers[i] === choice) {
-        choiceElement.setAttribute("checked", "true");
+        choiceElement.setAttribute("checked", true);
       }
       const choiceText = document.createTextNode(choice);
       questionElement.appendChild(choiceElement);
